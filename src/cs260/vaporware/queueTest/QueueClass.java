@@ -32,10 +32,15 @@ public class QueueClass {
 
     }
     public int removeLeft() {
-        return 0;
+        if (isEmpty()) return 0;
+        //leftSide++;
+        if (++leftSide == arraySize) leftSide=0;
+        return array[leftSide];
     }
     public int removeRight() {
-        return 0;
+        if (isEmpty()) return 0;
+        if (--rightSide == 0) rightSide = arraySize-1;
+        return array[rightSide];
     }
     public boolean isEmpty() {
         if (leftSide+1==rightSide) return true;//if they are back to back, there is no space between them
