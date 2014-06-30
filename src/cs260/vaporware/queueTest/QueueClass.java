@@ -39,7 +39,7 @@ public class QueueClass {
     }
     public int removeRight() {
         if (isEmpty()) return 0;
-        if (--rightSide == 0) rightSide = arraySize-1;
+        if (--rightSide < 0) rightSide = arraySize-1;
         return array[rightSide];
     }
     public boolean isEmpty() {
@@ -64,5 +64,21 @@ public class QueueClass {
 
     }
 
+    public String listQueue() {
+    String accumList="";
+    int addUp = 0;
+        if (isEmpty()) return accumList;
+   // if (rightSide-leftSide>0) {
+        for (int i = leftSide+1; i != rightSide; i++) {
+            accumList += array[i] + " ";
+            if (++addUp==10) {
+                accumList += "\n";
+                addUp =0;
+            }
+            if (i==arraySize-1) i=-1;
+        }
+
+    return accumList;
+    }
 
 }
