@@ -8,6 +8,31 @@ import java.util.Stack;
  * But they perform different kinds of functions, and StackClass works easily as it's own Class
  */
 public class StackClass {
+    private QueueClass theStack;
+    public StackClass() {
+        theStack = new QueueClass();
+    }
+    public StackClass(int n) {
+        theStack = new QueueClass(n);
+    }
+    public void push(int newInt) {
+        theStack.insertLeft(newInt);
+    }
+    public int pop() {
+        return theStack.removeLeft();
+    }
+    public int peek() {//this is the hard way, to not have to touch QueueClass
+        int temp = theStack.removeLeft();
+        theStack.insertLeft(temp);
+        return temp;
+    }
+}
+
+
+//change this to an inherited class
+    //composition will be easier
+    /*
+public class StackClass {
     private int[] array;
     private int location = 0;
     private int arraySize;
@@ -46,4 +71,4 @@ public class StackClass {
         }
         array=tempArray;
     }
-}
+}*/

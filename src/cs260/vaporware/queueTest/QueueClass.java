@@ -68,7 +68,6 @@ public class QueueClass {
     String accumList="";
     int addUp = 0;
         if (isEmpty()) return accumList;
-   // if (rightSide-leftSide>0) {
         for (int i = leftSide+1; i != rightSide; i++) {
             accumList += array[i] + " ";
             if (++addUp==10) {
