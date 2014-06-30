@@ -4,6 +4,8 @@ import java.util.Stack;
 
 /**
  * Created by Code on 6/29/14.
+ * The wording on this assignment was confusing, maybe it is supposed to extend QueueClass?
+ * But they perform different kinds of functions, and StackClass works easily as it's own Class
  */
 public class StackClass {
     private int[] array;
@@ -28,12 +30,12 @@ public class StackClass {
 
     public int pop() {
         if (location==0) return 0;//or throw exception
-        return array[location--];
+        return array[--location];
     }
 
     public int peek() {
         if (location==0) return 0;//exception
-        return array[location];
+        return array[location-1];
     }
 
     private void arrayDouble() {

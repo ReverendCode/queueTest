@@ -29,26 +29,35 @@ public class Main {
         lifo.insertLeft(1);
         lifo.insertLeft(2);
         lifo.insertLeft(3);
-        System.out.print(lifo.removeRight()+" ");
-        System.out.print(lifo.removeRight()+" ");
+        System.out.print(lifo.removeRight() + " ");
+        System.out.print(lifo.removeRight() + " ");
         System.out.print(lifo.removeRight()+" ");
 
         System.out.print("\nAnd add right, get left:\n");
         lifo.insertRight(6);
         lifo.insertRight(7);
         lifo.insertRight(8);
-        System.out.print(lifo.removeLeft()+" ");
+        System.out.print(lifo.removeLeft() + " ");
         System.out.print(lifo.removeLeft()+" ");
         System.out.print(lifo.removeLeft()+" ");
 
         //Here the assignment doesn't match up with the given driver.
         //this is coded to test the function outlined in the assignment
-        System.out.print("\nFinish QueueClass test with list functions\nShould show 34 33 43 47:\n");
+        System.out.print("\nFinish QueueClass test with list function\nShould show 34 33 43 47:\n");
         initialTest.insertLeft(33);
         initialTest.insertRight(43);
         initialTest.insertLeft(34);
         initialTest.insertRight(47);
         System.out.print(initialTest.listQueue());
+
+        //test StackClass
+        StackClass stack = new StackClass(10);
+        stack.push(6);
+        stack.push(7);
+        System.out.print("\nTesting stack:\n");
+        System.out.print("Peek at the top, should be 7: "+stack.peek());
+        System.out.print("\nPop it off, still 7: "+stack.pop());
+        System.out.print("\nPop again, should be 6: "+stack.pop());
 
 
     }
