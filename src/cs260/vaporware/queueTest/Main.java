@@ -41,9 +41,16 @@ public class Main {
         System.out.print(lifo.removeLeft()+" ");
         System.out.print(lifo.removeLeft()+" ");
 
+        System.out.print("\nShow proper array expansion:\n");
+        QueueClass expand = new QueueClass(2);
+        expand.insertLeft(1);
+        expand.insertLeft(2);
+        expand.insertLeft(3);
+        System.out.print("\nCreate an array with size 2, add 3 elements: "+expand.listQueue());
+
         //Here the assignment doesn't match up with the given driver.
         //this is coded to test the function outlined in the assignment
-        System.out.print("\nFinish QueueClass test with list function\nShould show 34 33 43 47:\n");
+        System.out.print("\n\nFinish QueueClass test with list function\nShould show 34 33 43 47:\n");
         initialTest.insertLeft(33);
         initialTest.insertRight(43);
         initialTest.insertLeft(34);
@@ -59,6 +66,18 @@ public class Main {
         System.out.print("\nPop it off, still 7: "+stack.pop());
         System.out.print("\nPop again, should be 6: "+stack.pop());
 
-
+        //test Priority Queue
+        PriorityQ testDouble = new PriorityQ(2);
+        testDouble.insertInt(1);
+        testDouble.insertInt(2);
+        testDouble.insertInt(3);
+        System.out.print("\nCreate 2 element array, add 3 elements:\n"+testDouble.showArray());
+        for (int i=1;i<20;i++) testDouble.insertInt(i);
+        System.out.print("\nAdd some more numbers to the array: "+ testDouble.showArray());
+        String outputString = "";
+        for (int j=0;j<4;j++) outputString += testDouble.getLargest()+" ";
+        System.out.print("\nNow pull the 4 largest integers: "+outputString);
+        PriorityQ emptyArray = new PriorityQ();
+        System.out.print("\nTest empty Queue, should return 0: "+emptyArray.getLargest());
     }
 }

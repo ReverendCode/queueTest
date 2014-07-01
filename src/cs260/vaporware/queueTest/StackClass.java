@@ -12,7 +12,7 @@ public class StackClass {
     public StackClass() {
         theStack = new QueueClass();
     }
-    public StackClass(int n) {
+    public StackClass(int n) {//this is a little unneeded, with the auto expanding code
         theStack = new QueueClass(n);
     }
     public void push(int newInt) {
@@ -21,7 +21,7 @@ public class StackClass {
     public int pop() {
         return theStack.removeLeft();
     }
-    public int peek() {//this is the hard way, to not have to touch QueueClass
+    public int peek() {
         int temp = theStack.removeLeft();
         theStack.insertLeft(temp);
         return temp;
