@@ -52,6 +52,7 @@ public class PriorityQ {
     private void unsortDelete(int position) {
         priority[position]=priority[--index];
     }
+
     public String showArray() {//debug method
         String output="";
         for (int i =0;i<index;i++) {
@@ -59,4 +60,5 @@ public class PriorityQ {
         }
         return output;
     }
+
 }

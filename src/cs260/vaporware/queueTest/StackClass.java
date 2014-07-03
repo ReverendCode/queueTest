@@ -4,8 +4,6 @@ import java.util.Stack;
 
 /**
  * Created by Code on 6/29/14.
- * The wording on this assignment was confusing, maybe it is supposed to extend QueueClass?
- * But they perform different kinds of functions, and StackClass works easily as it's own Class
  */
 public class StackClass {
     private QueueClass theStack;

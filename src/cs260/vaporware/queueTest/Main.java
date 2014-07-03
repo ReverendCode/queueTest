@@ -14,6 +14,7 @@ public class Main {
         System.out.print(initialTest.removeLeft() + " ");
         System.out.print(initialTest.removeLeft()+" ");
         System.out.print(initialTest.removeLeft()+" ");
+        System.out.print("\nGet left from empty queue: "+initialTest.removeLeft());
 
         System.out.println("\nNext, add right, get right:");
         initialTest.insertRight(6);
@@ -23,6 +24,7 @@ public class Main {
         System.out.print(initialTest.removeRight() + " ");
         System.out.print(initialTest.removeRight()+" ");
         System.out.print(initialTest.removeRight()+" ");
+        System.out.print("\nGet right from empty queue: "+initialTest.removeRight());
 
         QueueClass lifo = new QueueClass(9);
         System.out.println("\nNow add left, get right to show LIFO:");
@@ -58,18 +60,19 @@ public class Main {
         System.out.print(initialTest.listQueue());
 
         //test StackClass
-        StackClass stack = new StackClass(10);
+        StackClass stack = new StackClass(1);
         stack.push(6);
         stack.push(7);
         System.out.print("\nTesting stack:\n");
         System.out.print("Peek at the top, should be 7: "+stack.peek());
         System.out.print("\nPop it off, still 7: "+stack.pop());
         System.out.print("\nPop again, should be 6: "+stack.pop());
+        System.out.print("\nTest the now empty stack: "+stack.pop());
 
         //test Priority Queue
         PriorityQ testDouble = new PriorityQ(2);
         testDouble.insertInt(1);
-        testDouble.insertInt(2);
+        testDouble.insertInt(2);//the array is actually doubled here
         testDouble.insertInt(3);
         System.out.print("\nCreate 2 element array, add 3 elements:\n"+testDouble.showArray());
         for (int i=1;i<20;i++) testDouble.insertInt(i);
