@@ -1,5 +1,7 @@
 package cs260.vaporware.queueTest;
 
+import java.util.EmptyStackException;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,8 +16,11 @@ public class Main {
         System.out.print(initialTest.removeLeft() + " ");
         System.out.print(initialTest.removeLeft()+" ");
         System.out.print(initialTest.removeLeft()+" ");
-        System.out.print("\nGet left from empty queue: "+initialTest.removeLeft());
-
+        try {
+            System.out.print("\nGet left from empty queue: " + initialTest.removeLeft());
+        }catch (EmptyStackException e){
+            System.err.println("Stack returned: "+e.getMessage());
+        }
         System.out.println("\nNext, add right, get right:");
         initialTest.insertRight(6);
         initialTest.insertRight(7);
@@ -24,8 +29,11 @@ public class Main {
         System.out.print(initialTest.removeRight() + " ");
         System.out.print(initialTest.removeRight()+" ");
         System.out.print(initialTest.removeRight()+" ");
+        try{
         System.out.print("\nGet right from empty queue: "+initialTest.removeRight());
-
+        }catch (EmptyStackException e){
+            System.err.println("Stack returned: "+e.getMessage());
+        }
         QueueClass lifo = new QueueClass(9);
         System.out.println("\nNow add left, get right to show LIFO:");
         lifo.insertLeft(1);
@@ -67,7 +75,11 @@ public class Main {
         System.out.print("Peek at the top, should be 7: "+stack.peek());
         System.out.print("\nPop it off, still 7: "+stack.pop());
         System.out.print("\nPop again, should be 6: "+stack.pop());
-        System.out.print("\nTest the now empty stack: "+stack.pop());
+        try {
+            System.out.print("\nTest the now empty stack: "+stack.pop());
+        }catch (EmptyStackException e){
+            System.err.println("Stack returned: "+e.getMessage());
+        }
 
         //test Priority Queue
         PriorityQ testDouble = new PriorityQ(2);
@@ -81,6 +93,10 @@ public class Main {
         for (int j=0;j<4;j++) outputString += testDouble.getLargest()+" ";
         System.out.print("\nNow pull the 4 largest integers: "+outputString);
         PriorityQ emptyArray = new PriorityQ();
-        System.out.print("\nTest empty Queue, should return 0: "+emptyArray.getLargest());
+        try {
+            System.out.print("\nTest empty Queue, should return 0: "+emptyArray.getLargest());
+        }catch (EmptyStackException e){
+            System.err.println("Stack returned: "+e.getMessage());
+        }
     }
 }

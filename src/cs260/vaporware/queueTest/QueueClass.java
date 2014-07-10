@@ -1,12 +1,14 @@
 package cs260.vaporware.queueTest;
 
+import java.util.EmptyStackException;
+
 /**
  * Created by Code on 6/26/14.
  */
 public class QueueClass {
     private static final int DEFAULT_ARRAY = 100;
     private int[] array;
-    private int leftSide=0;//these should point to the next available spot in the array
+    private int leftSide=0;//this should point to the next available spot in the array
     private int rightSide=0;
     private int arraySize = DEFAULT_ARRAY;
     private int count = 0;
@@ -33,7 +35,7 @@ public class QueueClass {
         count++;
     }
     public int removeLeft() {
-        if (isEmpty()) return 0;
+        if (isEmpty()) throw new EmptyStackException();
         //leftSide++;
         if (++leftSide == arraySize) leftSide=0;
         count--;
@@ -41,7 +43,7 @@ public class QueueClass {
     }
     public int removeRight() {
         if (rightSide < 0) rightSide = arraySize-1;
-        if (isEmpty()) return 0;
+        if (isEmpty()) throw new EmptyStackException();
         count--;
         return array[rightSide--];
     }
